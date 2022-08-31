@@ -31,7 +31,7 @@ class PeriodoController extends Controller
 
     function edit($id){
 
-        $periodos = DB::table('periodos')->where('id_periodos', $id)->first();
+        $periodos = DB::table('periodos')->where('id', $id)->first();
  
         return view('periodos.edit', ['periodos' => $periodos, 'title' => 'Editar período']);
  
@@ -43,8 +43,8 @@ class PeriodoController extends Controller
         $id = array_shift($data);
 
         DB::table('periodos')
-            ->where('id_periodos',$id)
-            ->update(array_intersect_key($data,['ano'=>1,'dt_inicio'=>1, 'dt_fim'=>1]));
+            ->where('id',$id)
+            ->update(array_intersect_key($data,['nome'=>1,'dt_inicio'=>1, 'dt_fim'=>1]));
  
         return redirect('/periodos');
     }
@@ -52,8 +52,8 @@ class PeriodoController extends Controller
     function show($id){
         $periodos = DB::table('periodos')
             ->selectRaw("
-                id_periodos,
-                ano,
+                id,
+                nome,
                 dt_inicio,
                 dt_fim
                 ")
@@ -66,7 +66,7 @@ class PeriodoController extends Controller
     function destroy($id){
  
         DB::table('periodos')
-            ->where('id_periodos', $id)
+            ->where('id', $id)
             ->delete();
         return redirect('/periodos');
     }
