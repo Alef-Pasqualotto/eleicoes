@@ -1,7 +1,7 @@
 @extends('base.index')
 
 @section('container')
-<a class="btn btn-success mb-2" href="/eleitores/create">Novo Curso</a>
+<a class="btn btn-success mb-2" href="/eleitores/create">Novo Eleitor</a>
 <table class="table table-dark">
     <thead>
         <tr>
