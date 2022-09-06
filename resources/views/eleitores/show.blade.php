@@ -3,10 +3,12 @@
 @section('container')
 
 <ul>
-    <li>ID: {{$cursos->id_cursos}}</li>
-    <li>Nome do Curso: {{$cursos->nome_cursos}}</li>
-    <li>Nome Reduzido: {{$cursos->nome_reduzido}}</li>
+    <li>ID: {{$eleitores->id_eleitores}}</li>
+    <li>Nome: {{$eleitores->nome}}</li>
+    <li>Título de Eleitor: {{$eleitores->titulo}}</li>
+    <li>Zona de Eleição: {{$eleitores->zona}}</li>
+    <li>Seção: {{$eleitores->secao}}</li>
 </ul>
-<a class="btn btn-danger" href="/cursos">Voltar</a>
+<a class="btn btn-danger" href="/eleitores">Voltar</a>
 
 @endsection
