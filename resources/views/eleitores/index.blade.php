@@ -20,9 +20,9 @@
                 <td>{{$eleitor->zona}}</td>
                 <td>{{$eleitor->secao}}</td>    
                 <td>
-                    <a class="btn btn-warning" href="/eleitores/{{$eleitores->id_eleitores}}/edit">Editar</a>
-                    <a class="btn btn-info" href="/eleitores/{{$eleitores->id_eleitores}}/show">Ver</a>
-                    <a class="btn btn-danger" href="/eleitores/{{$eleitores->id_eleitores}}/destroy">Remover</a>
+                    <a class="btn btn-warning" href="/eleitores/{{$eleitores->id}}/edit">Editar</a>
+                    <a class="btn btn-info" href="/eleitores/{{$eleitores->id}}/show">Ver</a>
+                    <a class="btn btn-danger" href="/eleitores/{{$eleitores->id}}/destroy">Remover</a>
                 </td>
             </tr>
         @endforeach
