@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PeriodoController;
+use App\Http\Controllers\EleitoresController;
+use App\Http\Controllers\CandidatosController;
 
 /*
 |--------------------------------------------------------------------------
