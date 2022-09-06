@@ -9,6 +9,7 @@ class EleitoresController extends Controller
 {
     function index(){
         $eleitores = DB::table('eleitores')
+        
         ->SelectRaw('id, nome, titulo, zona, secao')
         ->orderBy('nome')
         ->get();
