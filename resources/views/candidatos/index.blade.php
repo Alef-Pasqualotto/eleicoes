@@ -22,9 +22,9 @@
                 <td>{{$candidato->cargo}}</td> 
                 <td>{{$candidato->periodo}}</td>  
                 <td>
-                    <a class="btn btn-warning" href="/candidatos/{{$candidatos->id}}/edit">Editar</a>
-                    <a class="btn btn-info" href="/candidatos/{{$candidatos->id}}/show">Ver</a>
-                    <a class="btn btn-danger" href="/candidatos/{{$candidatos->id}}/destroy">Remover</a>
+                    <a class="btn btn-warning" href="/candidatos/{{$candidato->id}}/edit">Editar</a>
+                    <a class="btn btn-info" href="/candidatos/{{$candidato->id}}/show">Ver</a>
+                    <a class="btn btn-danger" href="/candidatos/{{$candidato->id}}/destroy">Remover</a>
                 </td>
             </tr>
         @endforeach

@@ -12,13 +12,10 @@
           <a class="nav-link" href="/eleitores/">Eleitores</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/periodos/">Periodos</a>
+          <a class="nav-link" aria-current="page  " href="/periodos/">Periodos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/candidatos/">Candidatos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/respostas/">Respostas</a>
         </li>
       </ul>
     </div>
