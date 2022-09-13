@@ -26,13 +26,21 @@ class VotosController extends Controller
     
         function store(Request $request){
             $data = $request->all();
-     
-            unset($data['_token']);
-     
-            $confirma_periodo = DB::select('SELECT id_periodos, dt_inicio, dt_fim FROM periodos WHERE NOW() between dt_inicio and dt_fim');
-            if($confirma_periodo != null){
-                $data['periodo_id'] = strval($confirma_periodo[0]->id_periodos);
-                DB::table('votos')->insert($data);
+            
+            
+            //NOW() between dt_inicio and dt_fim
+            //$verificacoes = DB::select('SELECT * FROM votantes INNER JOIN periodos ON periodo.id = votantes.id WHERE eleitor = $data['eleitor']');
+            if($confirma_periodo != null){                
+                $voto['cadidato'] = $data['candidato'];
+                $voto['zona'] = $data['zona'];
+                $voto['secao'] = $data['secao'];       
+                $voto['dt-voto'] = $data['dt-voto'];
+                     
+                $votante['eleitor'] = $data['eleitor'];
+                $votante['eleitor'] = $data['eleitor'];
+
+                DB::table('votos')->insert($voto);
+                DB::table('votantes')->insert();
             }
             return redirect('/votos');
         }
