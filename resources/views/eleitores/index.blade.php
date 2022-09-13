@@ -1,7 +1,7 @@
 @extends('base.index')
 
 @section('container')
-<a class="btn btn-success mb-2" href="/eleitores/create">Novo Curso</a>
+<a class="btn btn-success mb-2" href="/eleitores/create">Novo Eleitor</a>
 <table class="table table-dark">
     <thead>
         <tr>
@@ -20,9 +20,9 @@
                 <td>{{$eleitor->zona}}</td>
                 <td>{{$eleitor->secao}}</td>    
                 <td>
-                    <a class="btn btn-warning" href="/eleitores/{{$eleitores->id_eleitores}}/edit">Editar</a>
-                    <a class="btn btn-info" href="/eleitores/{{$eleitores->id_eleitores}}/show">Ver</a>
-                    <a class="btn btn-danger" href="/eleitores/{{$eleitores->id_eleitores}}/destroy">Remover</a>
+                    <a class="btn btn-warning" href="/eleitores/{{$eleitor->id}}/edit">Editar</a>
+                    <a class="btn btn-info" href="/eleitores/{{$eleitor->id}}/show">Ver</a>
+                    <a class="btn btn-danger" href="/eleitores/{{$eleitor->id}}/destroy">Remover</a>
                 </td>
             </tr>
         @endforeach

@@ -3,7 +3,7 @@
 @section('container')
 <form action='/eleitores/update' method='post'>
     <input type='hidden' name='_token' value='{{ csrf_token() }}'/>
-    <input type="hidden" value="{{$eleitores->id_eleitores}}" name="id"/>
+    <input type="hidden" value="{{$eleitores->id}}" name="id"/>
 
     @include('components.field', ['type' => 'text', 'name' => 'nome', 'label' => 'Nome', 'value' => $eleitores->nome])
     @include('components.field', ['type' => 'text', 'name' => 'titulo', 'label' => 'Título de Eleitor', 'value' => $eleitores->titulo])

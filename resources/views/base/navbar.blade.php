@@ -9,13 +9,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="/periodos/">Periodos</a>
+          <a class="nav-link" href="/eleitores/">Eleitores</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/cursos/">Cursos</a>
+          <a class="nav-link" aria-current="page" href="/periodos/">Periodos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/turmas/">Turmas</a>
+          <a class="nav-link" href="/candidatos/">Candidatos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/respostas/">Respostas</a>
