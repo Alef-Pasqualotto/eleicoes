@@ -8,48 +8,58 @@
                 "partido": "PT",
                 "foto": "cp3.jpg",
                 "vice": {
-                    "nome": "Arão",
-                    "partido": "PRP",
+                    "nome": "Geraldo Alckmin",
+                    "partido": "PSB",
                     "foto": "v3.jpg"
                 }
             },
-            "15": {
-                "nome": "Malrinete Gralhada",
-                "partido": "MDB",
+            "22": {
+                "nome": "Jair Messias Bolsonaro",
+                "partido": "PL",
                 "foto": "cp2.jpg",
                 "vice": {
-                    "nome": "Biga",
-                    "partido": "MDB",
+                    "nome": "Walter Braga Netto",
+                    "partido": "PL",
                     "foto": "v2.jpg"
                 }
             },
-            "45": {
-                "nome": "Dr. Francisco",
-                "partido": "PSC",
+            "12": {
+                "nome": "Ciro Gomes",
+                "partido": "PDT",
                 "foto": "cp1.jpg",
                 "vice": {
-                    "nome": "João Rodrigues",
-                    "partido": "PV",
+                    "nome": "Ana Paula Matos",
+                    "partido": "PDT",
                     "foto": "v1.jpg"
                 }
             },
-            "54": {
-                "nome": "Zé Lopes",
-                "partido": "PPL",
+            "15": {
+                "nome": "Simone Tebet",
+                "partido": "MDB",
                 "foto": "cp4.jpg",
                 "vice": {
-                    "nome": "Francisca Ferreira Ramos",
-                    "partido": "PPL",
+                    "nome": "Mara Gabrilli",
+                    "partido": "PSDB",
                     "foto": "v4.jpg"
                 }
             },
-            "65": {
-                "nome": "Lindomar Pescador",
-                "partido": "PC do B",
+            "30": {
+                "nome": "Luiz Felipe d’Avila",
+                "partido": "NOVO",
                 "foto": "cp5.jpg",
                 "vice": {
-                    "nome": "Malú",
-                    "partido": "PC do B",
+                    "nome": "Tiago Mitraud",
+                    "partido": "NOVO",
+                    "foto": "v5.jpg"
+                }
+            },
+            "44": {
+                "nome": "Soraya Thronicke",
+                "partido": "União Brasil",
+                "foto": "cp5.jpg",
+                "vice": {
+                    "nome": "Marcos Cintra",
+                    "partido": "União Brasil",
                     "foto": "v5.jpg"
                 }
             }
