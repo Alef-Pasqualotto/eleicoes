@@ -8,6 +8,7 @@
   <script src="js/script.js" defer></script>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/tela.css">
+
 </head>
 <body>
   <h1>Urna Eletrônica</h1>
