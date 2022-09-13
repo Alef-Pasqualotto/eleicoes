@@ -5,7 +5,7 @@
 <table class="table table-dark">
     <thead>
         <tr>
-            <th>Ano</th>
+            <th>Nome</th>
             <th>Data de Início</th>
             <th>Data Final</th>
             <th>Ações</th>
@@ -14,7 +14,7 @@
     <tbody>
         @foreach($periodos as $periodos)
             <tr>
-                <td>{{$periodos->ano}}</td>
+                <td>{{$periodos->nome}}</td>
                 <td>{{$periodos->dt_inicio}}</td>
                 <td>{{$periodos->dt_fim}}</td>
                 <td>

@@ -14,15 +14,15 @@
     </thead>
     <tbody>
         @foreach($eleitores as $eleitor)
-            <tr>
+            <tr>    
                 <td>{{$eleitor->nome}}</td>
                 <td>{{$eleitor->titulo}}</td>
                 <td>{{$eleitor->zona}}</td>
                 <td>{{$eleitor->secao}}</td>    
                 <td>
-                    <a class="btn btn-warning" href="/eleitores/{{$eleitores->id}}/edit">Editar</a>
-                    <a class="btn btn-info" href="/eleitores/{{$eleitores->id}}/show">Ver</a>
-                    <a class="btn btn-danger" href="/eleitores/{{$eleitores->id}}/destroy">Remover</a>
+                    <a class="btn btn-warning" href="/eleitores/{{$eleitor->id}}/edit">Editar</a>
+                    <a class="btn btn-info" href="/eleitores/{{$eleitor->id}}/show">Ver</a>
+                    <a class="btn btn-danger" href="/eleitores/{{$eleitor->id}}/destroy">Remover</a>
                 </td>
             </tr>
         @endforeach

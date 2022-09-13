@@ -58,7 +58,7 @@ class PeriodoController extends Controller
                 dt_inicio,
                 dt_fim
                 ")
-                ->Where('id_periodos',$id)
+                ->Where('id',$id)
                 ->first();
  
         return view('periodos.show', ['periodos' => $periodos, 'title' => 'Períodos']);

@@ -13,7 +13,9 @@ class CandidatosController extends Controller
         ->orderBy('nome')
         ->get();
 
-        return view('candidatos.index', ['candidatos' => $candidatos, 'title' => 'Candidatos']);
+        $periodos = DB::select('SELECT * FROM periodos'); 
+
+        return view('candidatos.index', ['candidatos' => $candidatos, 'title' => 'Candidatos', 'periodos' => $periodos]);
     }
 
     function create(){

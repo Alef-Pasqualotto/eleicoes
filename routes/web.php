@@ -43,3 +43,6 @@ Route::post('/candidatos/store', [CandidatosController::class, 'store']);
 Route::get('/candidatos/{id}/edit', [CandidatosController::class, 'edit']);
 Route::post('/candidatos/update', [CandidatosController::class, 'update']);
 Route::get('/candidatos/{id}/destroy', [CandidatosController::class, 'destroy']);
+Route::get('/candidatos/{id}/destroy', [CandidatosController::class, 'destroy']);
+
+Route::view('/urna/', 'urna.index', ['title' => 'Bem-vindo!']);
