@@ -3,7 +3,7 @@
 @section('container')
 
 <ul>
-    <li>ID: {{$eleitores->id_eleitores}}</li>
+    <li>ID: {{$eleitores->id}}</li>
     <li>Nome: {{$eleitores->nome}}</li>
     <li>Título de Eleitor: {{$eleitores->titulo}}</li>
     <li>Zona de Eleição: {{$eleitores->zona}}</li>
