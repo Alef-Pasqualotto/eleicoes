@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="js/util.js"></script>
-  <script src="js/script.js" defer></script>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/tela.css">
+@extends('base.index')
 
-</head>
-<body>
-  <h1>Urna Eletrônica</h1>
+@section('container')
+
+<h1>Urna Eletrônica</h1>
 
   <div class="urna-area">
     <div class="urna">
@@ -68,7 +59,6 @@
           <img src="img/brasao.png" alt="Brasão da República">
           <h2>Justiça Eleitoral</h2>
         </div>
-oi
         <div class="teclado">
           <div class="teclado--linha">
             <div class="teclado--botao">1</div>
@@ -97,5 +87,4 @@ oi
       </div>
     </div>
   </div>
-</body>
-</html>
+  @endsection
