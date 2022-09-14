@@ -46,3 +46,6 @@ Route::get('/candidatos/{id}/destroy', [CandidatosController::class, 'destroy'])
 Route::get('/candidatos/{id}/destroy', [CandidatosController::class, 'destroy']);
 
 Route::view('/urna/', 'urna.index', ['title' => 'Bem-vindo!']);
+
+
+Route::view('/inicio/', 'inicio.index', ['title' => 'Bem-vindo!']);
