@@ -19,7 +19,8 @@ class CandidatosController extends Controller
     }
 
     function create(){
-        return view('candidatos.create', ['title' => 'Adicionar candidato']);
+        $periodos = DB::select('SELECT * FROM periodos');
+        return view('candidatos.create', ['title' => 'Adicionar candidato','periodos' => $periodos]);
     }
 
     function store(Request $request){
