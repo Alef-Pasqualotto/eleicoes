@@ -28,19 +28,20 @@ class VotosController extends Controller
             $data = $request->all();
             
             
-            //NOW() between dt_inicio and dt_fim
-            //$verificacoes = DB::select('SELECT * FROM votantes INNER JOIN periodos ON periodo.id = votantes.id WHERE eleitor = $data['eleitor']');
-            if($confirma_periodo != null){                
+            $verificacoes = DB::select('SELECT eleitor_id FROM periodo
+                                        LEFT JOIN votantes ON periodo.id = votantes.periodo AND votantes.eleitor_id = ' + $data[''] + '
+                                        LEFT JOIN eleitores ON eleitores.id = votantes.eleitor_id
+                                        WHERE NOW() BETWEEN dt_inicio and dt_fim');
+            if($verificacoes != null && $verificacoes['eleitores.id'] == null){
                 $voto['cadidato'] = $data['candidato'];
                 $voto['zona'] = $data['zona'];
                 $voto['secao'] = $data['secao'];       
                 $voto['dt-voto'] = $data['dt-voto'];
                      
-                $votante['eleitor'] = $data['eleitor'];
-                $votante['eleitor'] = $data['eleitor'];
+                $votante['eleitor'] = $verificacoes['eleitor'];
 
                 DB::table('votos')->insert($voto);
-                DB::table('votantes')->insert();
+                //DB::table('votantes')->insert();
             }
             return redirect('/votos');
         }
