@@ -9,13 +9,12 @@ class CandidatosController extends Controller
 {
     function index(){
         $candidatos = DB::table('candidatos')
-        ->SelectRaw('id, nome, partido, numero, cargo, periodo')
-        ->orderBy('nome')
+        ->join('periodos','candidatos.periodo','=','periodos.id')
+        ->SelectRaw('candidatos.id, candidatos.nome, candidatos.partido, candidatos.numero, candidatos.cargo, periodos.nome as periodo')
+        ->orderBy('candidatos.nome')
         ->get();
 
-        $periodos = DB::select('SELECT * FROM periodos'); 
-
-        return view('candidatos.index', ['candidatos' => $candidatos, 'title' => 'Candidatos', 'periodo' => $periodos]);
+        return view('candidatos.index', ['candidatos' => $candidatos, 'title' => 'Candidatos']);
     }
 
     function create(){
@@ -35,9 +34,12 @@ class CandidatosController extends Controller
 
     function edit($id){
 
-        $candidatos = DB::table('candidatos')->where('id', $id)->first();
+        $candidatos = DB::table('candidatos')
+        ->join('periodos','candidatos.periodo','=','periodos.id')
+        ->where('candidatos.id', $id)->first();
+        $periodos = DB::select('SELECT * FROM periodos');
  
-        return view('candidatos.edit', ['candidatos' => $candidatos, 'title' => 'Editar candidato']);
+        return view('candidatos.edit', ['candidatos' => $candidatos, 'title' => 'Editar candidato','periodos' => $periodos]);
  
     }
     function update(Request $request){

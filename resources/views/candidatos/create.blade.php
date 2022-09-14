@@ -6,8 +6,6 @@
 
     @include('components.field', ['type'=> 'text', 'name' => 'nome', 'label' => 'Nome do candidato', 'value' => ""])
     @include('components.field', ['type'=> 'text', 'name' => 'partido', 'label' => 'Partido', 'value' => ""])
-    @include('components.field', ['type'=> 'text', 'name' => 'numero', 'label' => 'Número do Candidato', 'value' => ""])
-    @include('components.field', ['type'=> 'text', 'name' => 'cargo', 'label' => 'Cargo', 'value' => ""])
     <div class="mb-2">
         <label for="cargo">Cargo</label>
         <div class="form-check">
@@ -41,6 +39,7 @@
             </label>
         </div>
     </div>
+    @include('components.field', ['type'=> 'text', 'name' => 'numero', 'label' => 'Número do Candidato', 'value' => ""])
     @include('components.selectPeriodo', ['name' => 'periodo', 'label' => 'Periodos', 'periodo' => $periodos])
     <a class="btn btn-danger" href="/candidatos">Voltar</a>
     @include('components.button', ['color'=> 'primary', 'label' => 'Inserir', 'type' => 'submit'])
