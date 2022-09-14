@@ -15,7 +15,7 @@ class CandidatosController extends Controller
 
         $periodos = DB::select('SELECT * FROM periodos'); 
 
-        return view('candidatos.index', ['candidatos' => $candidatos, 'title' => 'Candidatos', 'periodos' => $periodos]);
+        return view('candidatos.index', ['candidatos' => $candidatos, 'title' => 'Candidatos', 'periodo' => $periodos]);
     }
 
     function create(){

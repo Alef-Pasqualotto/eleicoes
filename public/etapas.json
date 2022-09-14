@@ -1,68 +1,71 @@
 {
     "0": {
-        "titulo": "presidente",
+        "titulo": "deputado federal",
+        "numeros": 4,
+        "candidatos": {
+            
+            }
+        },
+
+    "1": {
+        "titulo": "deputado estadual",
+        "numeros": 5,
+        "candidatos": {
+                
+            }
+        },
+        
+    "2": {
+        "titulo": "senador",
+        "numeros": 3,
+        "candidatos": {
+        
+            }
+        },
+
+    "3": {
+        "titulo": "governador",
         "numeros": 2,
         "candidatos": {
-            "13": {
-                "nome": "Luiz Inácio 'Lula' da Silva",
-                "partido": "PT",
-                "foto": "cp3.jpg",
-                "vice": {
-                    "nome": "Geraldo Alckmin",
-                    "partido": "PSB",
-                    "foto": "v3.jpg"
-                }
-            },
-            "22": {
-                "nome": "Jair Messias Bolsonaro",
-                "partido": "PL",
-                "foto": "cp2.jpg",
-                "vice": {
-                    "nome": "Walter Braga Netto",
+                        
+            }
+        },
+
+        "4": {
+            "titulo": "presidente",
+            "numeros": 2,
+            "candidatos": {
+                "13": {
+                    "nome": "Luiz Inácio 'Lula' da Silva",
+                    "partido": "PT",
+                    "foto": "cp3.jpg"
+                },
+                "22": {
+                    "nome": "Jair Messias Bolsonaro",
                     "partido": "PL",
-                    "foto": "v2.jpg"
-                }
-            },
-            "12": {
-                "nome": "Ciro Gomes",
-                "partido": "PDT",
-                "foto": "cp1.jpg",
-                "vice": {
-                    "nome": "Ana Paula Matos",
+                    "foto": "cp2.jpg"
+                },
+                "12": {
+                    "nome": "Ciro Gomes",
                     "partido": "PDT",
-                    "foto": "v1.jpg"
-                }
-            },
-            "15": {
-                "nome": "Simone Tebet",
-                "partido": "MDB",
-                "foto": "cp4.jpg",
-                "vice": {
-                    "nome": "Mara Gabrilli",
-                    "partido": "PSDB",
-                    "foto": "v4.jpg"
-                }
-            },
-            "30": {
-                "nome": "Luiz Felipe d’Avila",
-                "partido": "NOVO",
-                "foto": "cp5.jpg",
-                "vice": {
-                    "nome": "Tiago Mitraud",
+                    "foto": "cp1.jpg"
+                },
+                "15": {
+                    "nome": "Simone Tebet",
+                    "partido": "MDB",
+                    "foto": "cp4.jpg"
+                },
+                "30": {
+                    "nome": "Luiz Felipe d’Avila",
                     "partido": "NOVO",
-                    "foto": "v5.jpg"
-                }
-            },
-            "44": {
-                "nome": "Soraya Thronicke",
-                "partido": "União Brasil",
-                "foto": "cp5.jpg",
-                "vice": {
-                    "nome": "Marcos Cintra",
+                    "foto": "cp5.jpg"
+                },
+                "44": {
+                    "nome": "Soraya Thronicke",
                     "partido": "União Brasil",
-                    "foto": "v5.jpg"
+                    "foto": "cp6.jpg"
                 }
             }
         }
-    }
 }
+

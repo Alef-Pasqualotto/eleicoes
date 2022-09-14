@@ -13,7 +13,7 @@ const rVice = document.querySelector('.direita .candidato.menor')
 
 const votos = []
 
-const etapaAtual = 0
+var etapaAtual = 0
 var etapas = null
 var numeroDigitado = ''
 var votoEmBranco = false
