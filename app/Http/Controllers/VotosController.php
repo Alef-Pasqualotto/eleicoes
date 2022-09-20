@@ -8,19 +8,12 @@ use Illuminate\Support\Facades\DB;
 class VotosController extends Controller
 {
         function index(){
-            $votos = DB::table('votos')
-            ->SelectRaw('candidato, zona, secao')
-            ->orderBy('id')
-            ->get();
-    
+
+            $votos = DB::select('SELECT candidatos.nome, votos.zona, votos.secao, COUNT(votos.id) as votos FROM votos INNER JOIN candidatos ON votos.candidato = candidatos.id GROUP BY candidatos.nome ORDER BY votos.zona');
             $candidatos = DB::select('SELECT * FROM candidatos inner join votos on votos.candidato = candidatos.nome');
             $confirma_periodo = DB::select('SELECT dt_inicio, dt_fim FROM periodos WHERE NOW() between dt_inicio and dt_fim');
-
-            foreach ($candidatos as $candidato){
-                $QuantidadeVotos = DB::select('SELECT COUNT(dt-voto) from votos inner join candidatos on candidatos.nome = votos.candidato');
-            }
     
-            return view('votos.index', ['votos' => $votos, 'eleitores' => $eleitores, 'title'=> 'votos', 'confirma_periodo' => $confirma_periodo, 'candidatos' => $candidatos]);
+            return view('votos.index', ['votos' => $votos, 'title'=> 'votos', 'confirma_periodo' => $confirma_periodo, 'candidatos' => $candidatos]);
         }
     
         function create(){
@@ -51,18 +44,14 @@ class VotosController extends Controller
             return redirect('/votos');
         }
      
-        function show($id){
-            $votos = DB::table('votos')
-                ->selectRaw("
-                id_votos, 
-                data,
-                periodo_id, 
-                candidato,
-                zona,
-                secao
-                ")
-                ->find($id);
-     
+        function show($zona){
+            $candidatos = DB::select('votos')
+            ->join('periodos', 'candidatos.periodo', '=', 'periodos.id')
+            ->SelectRaw('candidatos.id, candidatos.nome, candidatos.partido, candidatos.numero, candidatos.cargo, periodos.nome as periodo')
+            ->orderBy('candidatos.nome')
+            ->get();
+
+            $votos = DB::select('SELECT candidatos.nome, votos.zona, votos.secao, COUNT(votos.id) as votos FROM votos INNER JOIN candidatos ON votos.candidato = candidatos.id WHERE votos.zona = $zona GROUP BY candidatos.nome');
             return view('votos.show', ['votos' => $votos, 'title' => 'votos']);
-}
+        }
 }

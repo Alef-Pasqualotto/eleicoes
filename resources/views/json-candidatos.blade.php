@@ -1,4 +1,3 @@
-<pre>
 {
     "0": {
         "titulo": "deputado federal",
@@ -40,5 +39,3 @@
         }
     }
 }
-
-</pre>

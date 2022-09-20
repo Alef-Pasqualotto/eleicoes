@@ -39,7 +39,7 @@ class CandidatosController extends Controller
     {
 
         $candidatos = DB::table('candidatos')
-            ->where('id', $id)->first();
+        ->where('id', $id)->first();
         $periodos = DB::select('SELECT * FROM periodos');
 
         return view('candidatos.edit', ['candidatos' => $candidatos, 'title' => 'Editar candidato', 'periodos' => $periodos]);
@@ -87,7 +87,7 @@ class CandidatosController extends Controller
     function buscaJson()
     {
 
-        $json = DB::select('SELECT GROUP_CONCAT( CONCAT( numero, ": ", JSON_OBJECT("nome", nome, "partido", partido)) SEPARATOR ", " ) AS linha FROM candidatos WHERE periodo = (SELECT id FROM periodos WHERE NOW() BETWEEN dt_inicio and dt_fim) GROUP BY cargo;');
+        $json = DB::select('SELECT GROUP_CONCAT( CONCAT( numero, ": ", JSON_OBJECT("nome", nome, "partido", partido)) SEPARATOR ", " ) AS linha FROM candidatos  GROUP BY cargo;');
         if ($json) {
             return view('json-candidatos', ['json' => $json]);
         }

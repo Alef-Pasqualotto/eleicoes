@@ -47,6 +47,7 @@ Route::get('/candidatos/{id}/destroy', [CandidatosController::class, 'destroy'])
 Route::get('/candidatos/{id}/destroy', [CandidatosController::class, 'destroy']);
 
 Route::get('/votos', [VotosController::class, 'index']);
+Route::get('/votos/{zona}/show', [VotosController::class, 'show']);
 
 Route::view('/urna/', 'urna.index', ['title' => 'Bem-vindo!']);
 

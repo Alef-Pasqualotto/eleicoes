@@ -21,23 +21,3 @@
         @endforeach
     </tbody>
 </table>
-
-<h1>Resultado por Seção</h1>
-<table class="table table-dark">
-    <thead>
-        <tr>
-            <th>Candidato<th>
-            <th>Seção</th>
-            <th>Votos</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($votos as $voto)
-            <tr>    
-                <td>{{$voto->secao}}</td>
-                <td>{{$voto->votos}}</td>    
-            </tr>
-        @endforeach
-    </tbody>
-</table>
-@endsection

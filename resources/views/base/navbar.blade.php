@@ -20,6 +20,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/urna">Urna</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/votos/">Votos</a>
+        </li>
       </ul>
     </div>
   </div>
