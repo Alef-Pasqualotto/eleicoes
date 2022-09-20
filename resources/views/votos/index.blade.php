@@ -32,10 +32,11 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($votos as $voto)
+        @foreach($secaos as $secao)
             <tr>    
-                <td>{{$voto->secao}}</td>
-                <td>{{$voto->votos}}</td>    
+                <td>{{$secao->nome}}</td>    
+                <td>{{$secao->secao}}</td>
+                <td>{{$secao->votos}}</td>    
             </tr>
         @endforeach
     </tbody>
