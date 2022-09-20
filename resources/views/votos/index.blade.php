@@ -6,13 +6,15 @@
 <table class="table table-dark">
     <thead>
         <tr>
+            <th>Candidato</th>
             <th>Zona</th>
             <th>Votos</th>
         </tr>
     </thead>
     <tbody>
         @foreach($votos as $voto)
-            <tr>    
+            <tr>
+                <td>{{$voto->candidato}}</td>    
                 <td>{{$voto->zona}}</td>
                 <td>{{$voto->votos}}</td>    
             </tr>
@@ -24,6 +26,7 @@
 <table class="table table-dark">
     <thead>
         <tr>
+            <th>Candidato<th>
             <th>Seção</th>
             <th>Votos</th>
         </tr>

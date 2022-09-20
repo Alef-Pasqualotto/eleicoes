@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PeriodoController;
 use App\Http\Controllers\EleitoresController;
 use App\Http\Controllers\CandidatosController;
+use App\Http\Controllers\VotosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,8 @@ Route::get('/candidatos/{id}/edit', [CandidatosController::class, 'edit']);
 Route::post('/candidatos/update', [CandidatosController::class, 'update']);
 Route::get('/candidatos/{id}/destroy', [CandidatosController::class, 'destroy']);
 Route::get('/candidatos/{id}/destroy', [CandidatosController::class, 'destroy']);
+
+Route::get('/votos', [VotosController::class, 'index']);
 
 Route::view('/urna/', 'urna.index', ['title' => 'Bem-vindo!']);
 

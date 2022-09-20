@@ -9,13 +9,16 @@ class VotosController extends Controller
 {
         function index(){
             $votos = DB::table('votos')
-            ->SelectRaw('id_votos, periodo_id, candidato_id, zona, secao')
-            ->orderBy('id_votos')
+            ->SelectRaw('candidato, zona, secao')
+            ->orderBy('id')
             ->get();
     
-            $eleitores = DB::select('SELECT * FROM eleitores');
-            $candidatos = DB::select('SELECT * FROM candidatos');
+            $candidatos = DB::select('SELECT * FROM candidatos inner join votos on votos.candidato = candidatos.nome');
             $confirma_periodo = DB::select('SELECT dt_inicio, dt_fim FROM periodos WHERE NOW() between dt_inicio and dt_fim');
+
+            foreach ($candidatos as $candidato){
+                $QuantidadeVotos = DB::select('SELECT COUNT(dt-voto) from votos inner join candidatos on candidatos.nome = votos.candidato');
+            }
     
             return view('votos.index', ['votos' => $votos, 'eleitores' => $eleitores, 'title'=> 'votos', 'confirma_periodo' => $confirma_periodo, 'candidatos' => $candidatos]);
         }
