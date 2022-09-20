@@ -30,21 +30,23 @@ class VotosController extends Controller
         function store(Request $request){
             $data = $request->all();
             
+            $eleitor_id = DB::select('SELECT eleitor_id FROM eleitores WHERE titulo = ' + $data['titulo']);
             
-            $verificacoes = DB::select('SELECT eleitor_id FROM periodo
-                                        LEFT JOIN votantes ON periodo.id = votantes.periodo AND votantes.eleitor_id = ' + $data[''] + '
-                                        LEFT JOIN eleitores ON eleitores.id = votantes.eleitor_id
+            $verificacoes = DB::select('SELECT eleitor_id, periodo_id FROM periodos
+                                        LEFT JOIN votantes ON periodos.id = votantes.periodo_id AND votantes.eleitor_id = ' + $eleitor_id + '                                        
                                         WHERE NOW() BETWEEN dt_inicio and dt_fim');
-            if($verificacoes != null && $verificacoes['eleitores.id'] == null){
+            if($verificacoes != null){
                 $voto['cadidato'] = $data['candidato'];
                 $voto['zona'] = $data['zona'];
                 $voto['secao'] = $data['secao'];       
                 $voto['dt-voto'] = $data['dt-voto'];
                      
-                $votante['eleitor'] = $verificacoes['eleitor'];
+                $votante['eleitor_id'] = $eleitor_id;
+                $votante['periodo_id'] = $verificacoes['periodo_id'];
+
 
                 DB::table('votos')->insert($voto);
-                //DB::table('votantes')->insert();
+                DB::table('votante')->insert($votante);
             }
             return redirect('/votos');
         }

@@ -50,5 +50,6 @@ Route::get('/votos', [VotosController::class, 'index']);
 
 Route::view('/urna/', 'urna.index', ['title' => 'Bem-vindo!']);
 
+Route::get('/json-candidatos', [CandidatosController::class, 'buscaJson']);
 
 Route::view('/inicio/', 'inicio.index', ['title' => 'Bem-vindo!']);
