@@ -9,7 +9,7 @@
     @include('components.field', ['type' => 'text', 'name' => 'partido', 'label' => 'Partido', 'value' => $candidatos->partido])
     @include('components.field', ['type' => 'text', 'name' => 'numero', 'label' => 'Número do Candidato', 'value' => $candidatos->numero])
     @include('components.field', ['type' => 'text', 'name' => 'cargo', 'label' => 'Cargo', 'value' => $candidatos->cargo])
-    @include('components.selectPeriodo', ['name' => 'periodo', 'label' => 'Periodos', 'periodo' => $periodos])
+    @include('components.selectPeriodo', ['name' => 'periodos', 'label' => 'Periodos', 'periodos' => $periodos])
     <a class="btn btn-danger" href="/candidatos">Voltar</a>
     @include('components.button', ['type' => 'submit', 'color' => 'primary', 'label' => 'Alterar'])
 </form>
