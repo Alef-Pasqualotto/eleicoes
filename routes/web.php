@@ -47,5 +47,6 @@ Route::get('/candidatos/{id}/destroy', [CandidatosController::class, 'destroy'])
 
 Route::view('/urna/', 'urna.index', ['title' => 'Bem-vindo!']);
 
+Route::get('/json-candidatos', [CandidatosController::class, 'buscaJson']);
 
 Route::view('/inicio/', 'inicio.index', ['title' => 'Bem-vindo!']);
