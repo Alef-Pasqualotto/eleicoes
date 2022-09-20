@@ -35,11 +35,10 @@ class CandidatosController extends Controller
     function edit($id){
 
         $candidatos = DB::table('candidatos')
-        ->join('periodos','candidatos.periodo','=','periodos.id')
-        ->where('candidatos.id', $id)->first();
+        ->where('id', $id)->first();
         $periodos = DB::select('SELECT * FROM periodos');
- 
-        return view('candidatos.edit', ['candidatos' => $candidatos, 'title' => 'Editar candidato','periodos' => $periodos]);
+
+        return view('candidatos.edit', ['candidatos' => $candidatos, 'title' => 'Editar candidato', 'periodos' => $periodos]);
  
     }
     function update(Request $request){
