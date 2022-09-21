@@ -13,11 +13,12 @@ const rVice = document.querySelector('.direita .candidato.menor')
 
 const votos = []
 
-var etapaAtual = 0
+var etapaAtual = -1
 var etapas = null
 var numeroDigitado = ''
 var votoEmBranco = false
 var listavotos = ''
+var tituloeleitor = ''
 
 ajax('etapas.json', 'GET', (response) => {
   etapas = JSON.parse(response)
@@ -223,18 +224,25 @@ function confirmar() {
   }
 
   if (etapas[etapaAtual + 1]) {
+    if (etapa['titulo'] == 'titulo de eleitor'){
+      tituloeleitor = numeroDigitado
+      console.log(tituloeleitor)
+      etapaAtual++
+    } else{
     listavotos = listavotos +","+ numeroDigitado
     document.getElementById("listavotos").value = listavotos;
     etapaAtual++
+  }
 } else {
     listavotos = listavotos +","+ numeroDigitado
     document.getElementById("listavotos").value = listavotos;
+    document.getElementById("tituloeleitor").value = tituloeleitor;
     document.querySelector('.tela').innerHTML = `
     <div class="fim">FIM</div>
     `
     document.getElementById("formvotos").submit();
   }
-  
+
   (new Audio('audio/se3.mp3')).play()
   comecarEtapa()
 }

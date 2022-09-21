@@ -25,17 +25,17 @@ class VotosController extends Controller
     {
         $data = $request->all();
 
-        $eleitor = DB::select('SELECT eleitor_id, zona, secao FROM eleitores WHERE titulo = ' + $data['titulo']);
+        $eleitor = DB::select('SELECT eleitor_id, zona, secao FROM eleitores WHERE titulo = ' . $data['tituloeleitor']);
 
         $verificacoes = DB::select('SELECT eleitor_id, periodo_id FROM periodos
-                                        LEFT JOIN votantes ON periodos.id = votantes.periodo_id AND votantes.eleitor_id = ' + $eleitor['id'] + '                                        
+                                        LEFT JOIN votantes ON periodos.id = votantes.periodo_id AND votantes.eleitor_id = ' . $eleitor['id'] . '                                        
                                         WHERE NOW() BETWEEN dt_inicio and dt_fim');
         if ($verificacoes != null) {
             DB::transaction(function ($data, $eleitor, $verificacoes) {
                 
-                $data['linha'] = substr($data['linha'], 1);
+                $data['listavotos'] = substr($data['listavotos'], 1);
 
-                $candidatos = explode(',', $data['linha']);
+                $candidatos = explode(',', $data['listavotos']);
 
                 for($i = 0; $i < count($candidatos); $i++){
                     if($candidatos[$i] != null){
