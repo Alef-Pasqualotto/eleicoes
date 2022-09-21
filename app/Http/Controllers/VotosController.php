@@ -25,7 +25,7 @@ class VotosController extends Controller
     {
         $data = $request->all();
 
-        $eleitor = DB::select('SELECT eleitor_id, zona, secao FROM eleitores WHERE titulo = ' . $data['tituloeleitor']);
+        $eleitor = DB::select('SELECT id, zona, secao FROM eleitores WHERE titulo = ' . $data['tituloeleitor']);
 
         $verificacoes = DB::select('SELECT eleitor_id, periodo_id FROM periodos
                                         LEFT JOIN votantes ON periodos.id = votantes.periodo_id AND votantes.eleitor_id = ' . $eleitor['id'] . '                                        
