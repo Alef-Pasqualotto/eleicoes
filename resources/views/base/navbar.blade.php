@@ -18,7 +18,7 @@
           <a class="nav-link" href="/candidatos/">Candidatos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/urna">Urna</a>
+          <a class="nav-link" href="/json-candidatos">Urna</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/votos/">Votos</a>

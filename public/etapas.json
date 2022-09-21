@@ -1,0 +1,40 @@
+
+                {
+                    "0": {
+                        "titulo": "deputado federal",
+                        "numeros": 4,
+                        "candidatos": {"7744": {"nome": "Velociraptor", "partido": "Acre Unido"}, "4477": {"nome": "Pteranodonte", "partido": "Partido Cretaceo"}}
+                    },
+
+                    "1": {
+                        "titulo": "deputado estadual",
+                        "numeros": 5,
+                        "candidatos": {
+                 
+                        }
+                    },
+                        
+                    "2": {
+                        "titulo": "senador",
+                        "numeros": 3,
+                        "candidatos": {
+                 
+                        }
+                    },
+
+                    "3": {
+                        "titulo": "governador",
+                        "numeros": 2,
+                        "candidatos": {
+               
+                        }
+                    },
+
+                    "4": {
+                        "titulo": "presidente",
+                        "numeros": 2,
+                        "candidatos": {
+                
+                        }
+                    }
+                }
