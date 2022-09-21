@@ -73,4 +73,12 @@ class EleitoresController extends Controller
             ->delete();
         return redirect('/eleitores');
     }
+
+    function mostraComprovante(){
+        
+    $dados = DB::select('SELECT periodos.nome AS periodo, eleitores.nome AS eleitor, DATE_FORMAT(dt_inicio, "%d/%m/%Y") AS dt_inicio, eleitores.zona, eleitores.secao
+                         FROM eleitores INNER JOIN votantes ON votantes.eleitor_id = eleitores.id AND votantes.id = '. 1 .' 
+                         INNER JOIN periodos ON periodos.id = votantes.periodo_id;');
+        return view('eleitores.comprovante', ['title' => 'Comprovante', 'dados' => $dados]);
+    }
 }
