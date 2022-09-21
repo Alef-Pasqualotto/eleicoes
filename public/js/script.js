@@ -165,7 +165,7 @@ function clicar(value) {
  */
 function branco() {
   console.log('branco')
-  if (etapa['titulo'] != 'titulo de eleitor'){
+
   
   // Verifica se há algum número digitado,
   // se sim, não vota
@@ -182,7 +182,7 @@ function branco() {
     (new Audio('audio/se1.mp3')).play()
     }
 
-  }
+  
 }   
 /**
  * Reinicia a etapa atual.
