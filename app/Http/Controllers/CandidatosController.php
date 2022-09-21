@@ -89,19 +89,19 @@ class CandidatosController extends Controller
 
         $json = DB::select('SELECT GROUP_CONCAT( CONCAT( numero, ": ", JSON_OBJECT("nome", nome, "partido", partido)) SEPARATOR ", " ) AS linha FROM candidatos  GROUP BY cargo;');
         if ($json) {
-            return view('json-candidatos', ['json' => $json]);
+            
 
 
 
-            $path = '/public/etapas.json';
+            $path = 'etapas.json';
             $jsonString = ('
                 {
                     "0": {
                         "titulo": "deputado federal",
                         "numeros": 4,
-                        "candidatos": {' +
+                        "candidatos": {' .
                             $json[1]->linha
-                            + '}
+                            . '}
                     },
 
                     "1": {
