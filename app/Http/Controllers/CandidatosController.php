@@ -87,7 +87,7 @@ class CandidatosController extends Controller
     function buscaJson()
     {
 
-        $json = DB::select('SELECT GROUP_CONCAT( CONCAT( numero, ": ", JSON_OBJECT("nome", nome, "partido", partido)) SEPARATOR ", " ) AS linha FROM candidatos  GROUP BY cargo;');
+        $json = DB::select('SELECT GROUP_CONCAT( CONCAT( "\"", numero, "\": ", JSON_OBJECT("nome", nome, "partido", partido)) SEPARATOR ", " ) AS linha FROM candidatos  GROUP BY cargo;');
         if ($json) {
          
             $path = 'etapas.json';
@@ -104,33 +104,33 @@ class CandidatosController extends Controller
                     "1": {
                         "titulo": "deputado estadual",
                         "numeros": 5,
-                        "candidatos": {
-                            {{$json[0]->linha}}
-                        }
+                        "candidatos": {' .
+                            $json[0]->linha
+                            . '}
                     },
                         
                     "2": {
                         "titulo": "senador",
                         "numeros": 3,
-                        "candidatos": {
-                            {{$json[2]->linha}}
-                        }
+                        "candidatos": {' .
+                            $json[2]->linha
+                            . '}
                     },
 
                     "3": {
                         "titulo": "governador",
                         "numeros": 2,
-                        "candidatos": {
-                            {{$json[4]->linha}} 
-                        }
+                        "candidatos": {' .
+                            $json[4]->linha
+                            . '}
                     },
 
                     "4": {
                         "titulo": "presidente",
                         "numeros": 2,
-                        "candidatos": {
-                            {{$json[3]->linha}}
-                        }
+                        "candidatos": {' .
+                            $json[3]->linha
+                            . '}
                     }
                 }');
 
