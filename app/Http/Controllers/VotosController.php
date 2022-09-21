@@ -61,8 +61,7 @@ class VotosController extends Controller
             };
             return redirect('/votos');
         }
-    }
-
+    
     function resultado()
     {
         $senadores = DB::select('SELECT candidatos.nome, COUNT(votos.id) as votos FROM votos INNER JOIN candidatos ON votos.candidato = candidatos.id where candidatos.cargo = "senador" GROUP BY candidatos.nome ORDER BY votos DESC LIMIT 1');
@@ -73,3 +72,4 @@ class VotosController extends Controller
 
         return view('votos.resultado', ['senadores' => $senadores, 'governadores' => $govenadores, 'presidentes' => $presidentes, 'deputadosfederal' => $deputadosfederal, 'deputadosestadual' => $deputadosestadual, 'title' => 'Resultado']);
     }
+}
