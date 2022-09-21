@@ -1,7 +1,7 @@
 @extends('base.index')
 
 @section('container')
-
+<div class="d-flex justify-content-center">
 <div class="card text-center" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">Comprovante de votação {{$dados[0]->periodo}}</h5>
@@ -10,6 +10,7 @@
     <p class="card-text">Inscrição: {{$dados[0]->titulo}}</p>
     <p class="card-text">Zona: {{$dados[0]->zona}} Seção: {{$dados[0]->secao}}</p>
   </div>
+</div>
 </div>
 
 
