@@ -29,6 +29,7 @@ Route::get('/periodos/{id}/edit', [PeriodoController::class, 'edit']);
 Route::post('/periodos/update', [PeriodoController::class, 'update']);
 Route::get('/periodos/{id}/destroy', [PeriodoController::class, 'destroy']);
 
+Route::get('/comprovante', [EleitoresController::class, 'mostraComprovante']);
 Route::get('/eleitores', [EleitoresController::class, 'index']);
 Route::get('/eleitores/{id}/show', [EleitoresController::class, 'show'])->where('id','[0-9]+');
 Route::get('/eleitores/create', [EleitoresController::class, 'create']);
@@ -49,8 +50,6 @@ Route::get('/candidatos/{id}/destroy', [CandidatosController::class, 'destroy'])
 Route::get('/votos', [VotosController::class, 'index']);
 Route::get('/votos/resultado', [VotosController::class, 'resultado']);
 Route::post('/votos/store', [VotosController::class, 'store']);
-
-Route::view('/urna/', 'urna.index', ['title' => 'Bem-vindo!']);
 
 Route::get('/json-candidatos', [CandidatosController::class, 'buscaJson']);
 
