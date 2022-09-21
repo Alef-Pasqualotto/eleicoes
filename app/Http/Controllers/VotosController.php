@@ -26,7 +26,7 @@ class VotosController extends Controller
         
         $data = $request->all();        
 
-        $eleitor = DB::select('SELECT id, zona, secao FROM eleitores WHERE titulo = ' . $data['tituloeleitor']. ';');
+        $eleitor = DB::select('SELECT id, zona, secao FROM eleitores WHERE titulo = ' . $data['tituloeleitor']);
 
         
         

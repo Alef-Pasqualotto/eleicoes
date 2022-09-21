@@ -91,7 +91,9 @@ function atualizarInterface() {
 
   console.log('Candidato: ' + candidato)
 
-  rVotoPara.style.display = 'inline'
+  if (etapa['titulo'] != 'titulo de eleitor'){
+    rVotoPara.style.display = 'inline'
+  }
   rDescricao.style.display = 'block'
   rNomeCandidato.style.display = 'block'
   rPartidoPolitico.style.display = 'block'
@@ -118,8 +120,8 @@ function atualizarInterface() {
 
     return
   }
-
-  if (votoEmBranco) return
+  if (etapa['titulo'] != 'titulo de eleitor'){
+    if (votoEmBranco) return
 
   // Anular o voto
   rNomeCandidato.style.display = 'none'
@@ -130,7 +132,10 @@ function atualizarInterface() {
   rMensagem.classList.add('pisca')
   rMensagem.innerHTML = 'VOTO NULO'
 }
-
+rNomeCandidato.style.display = 'none'
+rPartidoPolitico.style.display = 'none'
+rNomeVice.style.display = 'none'
+}
 /**
  * Verifica se pode usar o teclado e atualiza o número.
  */
@@ -160,6 +165,7 @@ function clicar(value) {
  */
 function branco() {
   console.log('branco')
+  if (etapa['titulo'] != 'titulo de eleitor'){
   
   // Verifica se há algum número digitado,
   // se sim, não vota
@@ -167,16 +173,17 @@ function branco() {
     votoEmBranco = true
 
     numeros.style.display = 'none'
+    
     rVotoPara.style.display = 'inline'
     rDescricao.style.display = 'block'
     rMensagem.style.display = 'block'
     rMensagem.innerHTML = 'VOTO EM BRANCO';
 
     (new Audio('audio/se1.mp3')).play()
+    }
+
   }
-
-}
-
+}   
 /**
  * Reinicia a etapa atual.
  */
