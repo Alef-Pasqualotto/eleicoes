@@ -1,3 +1,3 @@
 <pre>
-{{var_dump($verificacoes)}}
+{{var_dump($candidatos[0]->zona)}}
 </pre>
