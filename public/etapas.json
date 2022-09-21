@@ -1,0 +1,32 @@
+
+                {
+                    "0": {
+                        "titulo": "deputado federal",
+                        "numeros": 4,
+                        "candidatos": {"7744": {"nome": "Velociraptor", "partido": "Acre Unido"}, "4477": {"nome": "Pteranodonte", "partido": "Partido Cretaceo"}}
+                    },
+
+                    "1": {
+                        "titulo": "deputado estadual",
+                        "numeros": 5,
+                        "candidatos": {"33221": {"nome": "Monteiro Lobato", "partido": "Partido Sitio"}, "14725": {"nome": "Machado de Assis", "partido": "Os Casmurros"}}
+                    },
+                        
+                    "2": {
+                        "titulo": "senador",
+                        "numeros": 3,
+                        "candidatos": {"852": {"nome": "Maestro Shifu", "partido": "Cunguifu"}, "741": {"nome": "Oogway", "partido": "Tratuga"}}
+                    },
+
+                    "3": {
+                        "titulo": "governador",
+                        "numeros": 2,
+                        "candidatos": {"42": {"nome": "Isaque Niuton", "partido": "Gravidade Universal Brasileira"}, "88": {"nome": "Alberto Einstein", "partido": "Mrs. Genio"}}
+                    },
+
+                    "4": {
+                        "titulo": "presidente",
+                        "numeros": 2,
+                        "candidatos": {"33": {"nome": "Homem-Sereia", "partido": "Mexilhoes"}, "44": {"nome": "Sr. Sirigueijo", "partido": "Partido Cascudo"}}
+                    }
+                }
