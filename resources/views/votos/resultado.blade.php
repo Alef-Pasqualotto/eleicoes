@@ -6,8 +6,8 @@
 <table class="table table-bordered">
     <thead class="table-light">
         <tr>
-            <th>Candidato</th>
-            <th>Quantidade de votos</th>
+            <th width="50%">Candidato</th>
+            <th width="50%">Quantidade de votos</th>
         </tr>
     </thead>
     <tbody>
@@ -24,8 +24,8 @@
 <table class="table table-bordered">
     <thead class="table-light">
         <tr>
-            <th>Candidato</th>
-            <th>Quantidade de votos</th>
+            <th width="50%">Candidato</th>
+            <th width="50%">Quantidade de votos</th>
         </tr>
     </thead>
     <tbody>
@@ -42,8 +42,8 @@
 <table class="table table-bordered">
     <thead class="table-light">
         <tr>
-            <th>Candidato</th>
-            <th>Quantidade de votos</th>
+            <th width="50%">Candidato</th>
+            <th width="50%">Quantidade de votos</th>
         </tr>
     </thead>
     <tbody>
@@ -60,8 +60,8 @@
 <table class="table table-bordered">
     <thead class="table-light">
         <tr>
-            <th>Candidato</th>
-            <th>Quantidade de votos</th>
+            <th width="50%">Candidato</th>
+            <th width="50%">Quantidade de votos</th>
         </tr>
     </thead>
     <tbody>
@@ -78,8 +78,8 @@
 <table class="table table-bordered">
     <thead class="table-light">
         <tr>
-            <th>Candidato</th>
-            <th>Quantidade de Votos</th>
+            <th width="50%">Candidato</th>
+            <th width="50%">Quantidade de Votos</th>
         </tr>
     </thead>
     <tbody>
