@@ -1,3 +1,8 @@
+<?php 
+
+
+$path = 'etapas.json';
+$jsonString = ('
 {
     "0": {
         "titulo": "deputado federal",
@@ -38,4 +43,10 @@
             {{$json[3]->linha}}
         }
     }
-}
+}');
+
+$fp = fopen($path, 'w');
+fwrite($fp, $jsonString);
+fclose($fp);
+
+?>

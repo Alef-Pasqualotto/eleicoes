@@ -39,7 +39,7 @@ class CandidatosController extends Controller
     {
 
         $candidatos = DB::table('candidatos')
-        ->where('id', $id)->first();
+            ->where('id', $id)->first();
         $periodos = DB::select('SELECT * FROM periodos');
 
         return view('candidatos.edit', ['candidatos' => $candidatos, 'title' => 'Editar candidato', 'periodos' => $periodos]);
@@ -90,6 +90,56 @@ class CandidatosController extends Controller
         $json = DB::select('SELECT GROUP_CONCAT( CONCAT( numero, ": ", JSON_OBJECT("nome", nome, "partido", partido)) SEPARATOR ", " ) AS linha FROM candidatos  GROUP BY cargo;');
         if ($json) {
             return view('json-candidatos', ['json' => $json]);
+
+
+
+            $path = '/public/etapas.json';
+            $jsonString = ('
+                {
+                    "0": {
+                        "titulo": "deputado federal",
+                        "numeros": 4,
+                        "candidatos": {' +
+                            $json[1]->linha
+                            + '}
+                    },
+
+                    "1": {
+                        "titulo": "deputado estadual",
+                        "numeros": 5,
+                        "candidatos": {
+                            {{$json[0]->linha}}
+                        }
+                    },
+                        
+                    "2": {
+                        "titulo": "senador",
+                        "numeros": 3,
+                        "candidatos": {
+                            {{$json[2]->linha}}
+                        }
+                    },
+
+                    "3": {
+                        "titulo": "governador",
+                        "numeros": 2,
+                        "candidatos": {
+                            {{$json[4]->linha}} 
+                        }
+                    },
+
+                    "4": {
+                        "titulo": "presidente",
+                        "numeros": 2,
+                        "candidatos": {
+                            {{$json[3]->linha}}
+                        }
+                    }
+                }');
+
+            $fp = fopen($path, 'w');
+            fwrite($fp, $jsonString);
+            fclose($fp);
         }
     }
 }

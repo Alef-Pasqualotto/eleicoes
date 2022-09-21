@@ -2,6 +2,7 @@
 
 @section('container')
 
+
 <h1>Urna Eletrônica</h1>
 
   <div class="urna-area">
