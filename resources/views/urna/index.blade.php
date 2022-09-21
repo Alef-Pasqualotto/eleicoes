@@ -90,5 +90,7 @@
 
   <form id="formvotos" method="post" action="/votos/store">
     <input type="hidden" name="listavotos" id="listavotos" value=""></input>
+    <input type="hidden" name="tituloeleitor" id="tituloeleitor" value=""></input>
+    <input type='hidden' name='_token' value='{{ csrf_token() }}' required/>
   </form>
   @endsection

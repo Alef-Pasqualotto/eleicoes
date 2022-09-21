@@ -1,5 +1,12 @@
 
                 {
+                    "-1": {
+                        "titulo": "titulo de eleitor",
+                        "numeros": 12,
+                        "candidatos": {}
+                    },
+
+
                     "0": {
                         "titulo": "deputado federal",
                         "numeros": 4,

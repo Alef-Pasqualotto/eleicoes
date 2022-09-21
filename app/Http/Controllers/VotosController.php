@@ -23,48 +23,42 @@ class VotosController extends Controller
 
     function store(Request $request)
     {
-        $data = $request->all();
+        
+        $data = $request->all();        
 
-        $eleitor = DB::select('SELECT eleitor_id, zona, secao FROM eleitores WHERE titulo = ' + $data['tituloeleitor']);
+        $eleitor = DB::select('SELECT id, zona, secao FROM eleitores WHERE titulo = ' . $data['tituloeleitor']. ';');
 
+        
+        
         $verificacoes = DB::select('SELECT eleitor_id, periodo_id FROM periodos
-                                        LEFT JOIN votantes ON periodos.id = votantes.periodo_id AND votantes.eleitor_id = ' + $eleitor['id'] + '                                        
-                                        WHERE NOW() BETWEEN dt_inicio and dt_fim');
+                                        LEFT JOIN votantes ON periodos.id = votantes.periodo_id AND votantes.eleitor_id = ' . $eleitor[0]->id );
         if ($verificacoes != null) {
-            DB::transaction(function ($data, $eleitor, $verificacoes) {
+            
                 
-                $data['listavotos'] = substr($data['linha'], 1);
+                $data['listavotos'] = substr($data['listavotos'], 1);
 
-                $candidatos = explode(',', $data['linha']);
+                $candidatos = explode(',', $data['listavotos']);
 
                 for($i = 0; $i < count($candidatos); $i++){
                     if($candidatos[$i] != null){
                    $candidatos[$i] = DB::select('SELECT candidatos.id FROM candidatos WHERE candidatos.numero = '. $candidatos[$i]);
+                   
+                   //return view('welcome', ['eleitor' => $candidatos]);
+                DB::table('votos')->insert([
+                    ['dt-voto' => NOW(), 'candidato' => $candidatos[$i], 'zona' => $eleitor[$i]->zona, 'secao' => $eleitor[$i]->secao],                    
+                ]);
                     }
                 }
 
-                DB::table('votos')->insert([
-                    ['dt-voto' => NOW(), 'candidato' => $candidatos[0], 'zona' => $eleitor['zona'], 'secao' => $eleitor['secao']],
-                    ['dt-voto' => NOW(), 'candidato' => $candidatos[1], 'zona' => $eleitor['zona'], 'secao' => $eleitor['secao']],
-                    ['dt-voto' => NOW(), 'candidato' => $candidatos[2], 'zona' => $eleitor['zona'], 'secao' => $eleitor['secao']],
-                    ['dt-voto' => NOW(), 'candidato' => $candidatos[3], 'zona' => $eleitor['zona'], 'secao' => $eleitor['secao']],
-                    ['dt-voto' => NOW(), 'candidato' => $candidatos[4], 'zona' => $eleitor['zona'], 'secao' => $eleitor['secao']],
-                ]);
 //federal, estadual, senador, governador, presidente
-                $voto['cadidato'] = $data['candidato'];
-                $voto['zona'] = $data['zona'];
-                $voto['secao'] = $data['secao'];
-                $voto['dt-voto'] = $data['dt-voto'];
 
                 $votante['eleitor_id'] = $eleitor['id'];
                 $votante['periodo_id'] = $verificacoes['periodo_id'];
-
-
-                DB::table('votos')->insert($voto);
+                
                 DB::table('votante')->insert($votante);
-            });
+            };
+            return redirect('/votos');
         }
-        return redirect('/votos');
     }
 
     function resultado()
@@ -77,4 +71,3 @@ class VotosController extends Controller
 
         return view('votos.resultado', ['senadores' => $senadores, 'governadores' => $govenadores, 'presidentes' => $presidentes, 'deputadosfederal' => $deputadosfederal, 'deputadosestadual' => $deputadosestadual, 'title' => 'Resultado']);
     }
-}
