@@ -2,7 +2,7 @@
 
 @section('container')
 <a class="btn btn-success mb-2" href="/candidatos/create">Novo Candidato</a>
-<table class="table table-dark">
+<table class="table table-striped">
     <thead>
         <tr>
             <th>Nome</th>

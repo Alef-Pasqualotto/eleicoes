@@ -3,7 +3,7 @@
 @section('container')
 <a class="btn btn-success mb-2" href="/votos/resultado">Resultado da Eleição</a>
 <h1>Resultado por Zona</h1>
-<table class="table table-dark">
+<table class="table table-striped">
     <thead>
         <tr>
             <th>Candidato</th>
@@ -23,10 +23,10 @@
 </table>
 
 <h1>Resultado por Seção</h1>
-<table class="table table-dark">
+<table class="table table-striped">
     <thead>
         <tr>
-            <th>Candidato<th>
+            <th>Candidato</th>
             <th>Seção</th>
             <th>Votos</th>
         </tr>

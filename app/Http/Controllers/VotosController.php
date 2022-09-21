@@ -42,4 +42,14 @@ class VotosController extends Controller
             }
             return redirect('/votos');
         }    
+
+        function resultado(){
+            $senadores = DB::select('SELECT candidatos.nome, COUNT(votos.id) as votos FROM votos INNER JOIN candidatos ON votos.candidato = candidatos.id where candidatos.cargo = "senador" GROUP BY candidatos.nome ORDER BY votos DESC LIMIT 1');
+            $govenadores = DB::select('SELECT candidatos.nome, COUNT(votos.id) as votos FROM votos INNER JOIN candidatos ON votos.candidato = candidatos.id where candidatos.cargo = "governador" GROUP BY candidatos.nome ORDER BY votos DESC LIMIT 1');
+            $presidentes = DB::select('SELECT candidatos.nome, COUNT(votos.id) as votos FROM votos INNER JOIN candidatos ON votos.candidato = candidatos.id where candidatos.cargo = "presidente" GROUP BY candidatos.nome ORDER BY votos DESC LIMIT 1');
+            $deputadosfederal = DB::select('SELECT candidatos.nome, COUNT(votos.id) as votos FROM votos INNER JOIN candidatos ON votos.candidato = candidatos.id where candidatos.cargo = "deputado estadual" GROUP BY candidatos.nome ORDER BY votos DESC LIMIT 1 ');
+            $deputadosestadual = DB::select('SELECT candidatos.nome, COUNT(votos.id) as votos FROM votos INNER JOIN candidatos ON votos.candidato = candidatos.id where candidatos.cargo = "deputado federal" GROUP BY candidatos.nome ORDER BY votos DESC LIMIT 1');
+
+            return view('votos.resultado', ['senadores' => $senadores, 'governadores' => $govenadores, 'presidentes' => $presidentes, 'deputadosfederal' => $deputadosfederal, 'deputadosestadual' => $deputadosestadual, 'title' => 'Resultado']);
+        } 
 }
