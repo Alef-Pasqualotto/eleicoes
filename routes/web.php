@@ -49,6 +49,7 @@ Route::get('/candidatos/{id}/destroy', [CandidatosController::class, 'destroy'])
 
 Route::get('/votos', [VotosController::class, 'index']);
 Route::get('/votos/resultado', [VotosController::class, 'resultado']);
+Route::post('/votos/store', [VotosController::class, 'store']);
 
 Route::get('/json-candidatos', [CandidatosController::class, 'buscaJson']);
 

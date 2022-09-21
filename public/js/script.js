@@ -17,6 +17,7 @@ var etapaAtual = 0
 var etapas = null
 var numeroDigitado = ''
 var votoEmBranco = false
+var listavotos = ''
 
 ajax('etapas.json', 'GET', (response) => {
   etapas = JSON.parse(response)
@@ -102,14 +103,14 @@ function atualizarInterface() {
     rPartidoPolitico.querySelector('span').innerHTML = candidato['partido']
 
     rCandidato.style.display = 'block'
-    rCandidato.querySelector('.imagem img').src = `img/${candidato['foto']}`
+    rCandidato.querySelector('.imagem img').src = `img/semimagem.jpg`
     rCandidato.querySelector('.cargo p').innerHTML = etapa['titulo']
     
     if (vice) {
       rNomeVice.style.display = 'block'
       rNomeVice.querySelector('span').innerHTML = vice['nome']
       rVice.style.display = 'block'
-      rVice.querySelector('.imagem img').src = `img/${vice['foto']}`
+      rVice.querySelector('.imagem img').src = `img/semimagem.jpg`
     } else {
       rNomeVice.style.display = 'none'
     }
@@ -222,13 +223,18 @@ function confirmar() {
   }
 
   if (etapas[etapaAtual + 1]) {
+    listavotos = listavotos +","+ numeroDigitado
+    document.getElementById("listavotos").value = listavotos;
     etapaAtual++
-  } else {
+} else {
+    listavotos = listavotos +","+ numeroDigitado
+    document.getElementById("listavotos").value = listavotos;
     document.querySelector('.tela').innerHTML = `
-      <div class="fim">FIM</div>
+    <div class="fim">FIM</div>
     `
+    document.getElementById("formvotos").submit();
   }
-
+  
   (new Audio('audio/se3.mp3')).play()
   comecarEtapa()
 }

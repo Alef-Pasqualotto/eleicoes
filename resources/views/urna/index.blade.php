@@ -29,7 +29,7 @@
           <div class="direita">
             <div class="candidato">
               <div class="imagem">
-                <img src="" alt="Candidato">
+                <img height="100" src="" alt="Candidato">
               </div>
               <div class="cargo">
                 <p>Presidente</p>
@@ -87,4 +87,8 @@
       </div>
     </div>
   </div>
+
+  <form id="formvotos" method="post" action="/votos/store">
+    <input type="hidden" name="listavotos" id="listavotos" value=""></input>
+  </form>
   @endsection
