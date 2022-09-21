@@ -1,3 +1,3 @@
 <pre>
-{{var_dump($eleitor[3])}}
+{{var_dump($verificacoes)}}
 </pre>

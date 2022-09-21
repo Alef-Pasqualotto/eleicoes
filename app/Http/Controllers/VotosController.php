@@ -32,30 +32,32 @@ class VotosController extends Controller
         
         $verificacoes = DB::select('SELECT eleitor_id, periodo_id FROM periodos
                                         LEFT JOIN votantes ON periodos.id = votantes.periodo_id AND votantes.eleitor_id = ' . $eleitor[0]->id );
-        if ($verificacoes != null) {
+       if ($verificacoes != null) {
             
                 
                 $data['listavotos'] = substr($data['listavotos'], 1);
 
                 $candidatos = explode(',', $data['listavotos']);
+            
+                $totaldevotos = count($candidatos);
 
-                for($i = 0; $i < count($candidatos); $i++){
-                    if($candidatos[$i] != null){
-                   $candidatos[$i] = DB::select('SELECT candidatos.id FROM candidatos WHERE candidatos.numero = '. $candidatos[$i]);
+                $contador = 0;
+
+                while ($contador < $totaldevotos){
+                    if($candidatos[$contador] != null){
+                   $candidatos[$contador] = DB::select('SELECT candidatos.id FROM candidatos WHERE candidatos.numero = '. $candidatos[$contador]);
                    
-                   //return view('welcome', ['eleitor' => $candidatos]);
                 DB::table('votos')->insert([
-                    ['dt-voto' => NOW(), 'candidato' => $candidatos[$i], 'zona' => $eleitor[$i]->zona, 'secao' => $eleitor[$i]->secao],                    
+                    ['dt-voto' => NOW(), 'candidato' => $candidatos[$contador], 'zona' => $eleitor[$contador]->zona, 'secao' => $eleitor[$contador]->secao],                    
                 ]);
                     }
+                $contador++;
                 }
 
-//federal, estadual, senador, governador, presidente
-
-                $votante['eleitor_id'] = $eleitor['id'];
-                $votante['periodo_id'] = $verificacoes['periodo_id'];
+                $votante['eleitor_id'] = $eleitor[0]->id;
+                $votante['periodo_id'] = 5;
                 
-                DB::table('votante')->insert($votante);
+                DB::table('votantes')->insert($votante);
             };
             return redirect('/votos');
         }
